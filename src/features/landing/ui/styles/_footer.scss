@@ -1,0 +1,136 @@
+@use './mixins' as *;
+
+.eco-footer {
+  background: #f8f8f8;
+  color: #4a4a4a;
+  padding: 0 clamp(20px, 5vw, 48px);
+}
+
+.eco-footer__grid {
+  @include eco-content-rail;
+  margin-bottom: 40px;
+  padding-top: 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 2fr);
+  gap: 0 56px;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.eco-footer__brand {
+  padding-right: 48px;
+  border-right: 1px solid #e5e5e5;
+
+  @media (max-width: 900px) {
+    padding-right: 0;
+    border-right: 0;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 40px;
+  }
+
+  img {
+    display: block;
+    height: 32px;
+    width: auto;
+    margin-bottom: 20px;
+  }
+}
+
+.eco-footer__desc {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a4a4a;
+  font-weight: 400;
+  max-width: 320px;
+}
+
+.eco-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px 40px;
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eco-footer__heading {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #222;
+}
+
+.eco-footer__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eco-footer__col li {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.eco-footer__col a {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+
+  &:hover {
+    color: #3442b5;
+    text-decoration: underline;
+  }
+}
+
+.eco-footer__social {
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #5c5c5c;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #3442b5;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #3442b5;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.eco-footer__bottom {
+  @include eco-content-rail;
+  padding-top: 28px;
+  padding-bottom: 32px;
+  border-top: 1px solid #e8e8e8;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #a3a3a3;
+    font-weight: 400;
+  }
+}

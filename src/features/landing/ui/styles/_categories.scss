@@ -1,0 +1,99 @@
+.eco-categories {
+  padding: 0 20px;
+  max-width: none;
+  margin: 0 auto;
+}
+
+.eco-categories__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 42px;
+}
+
+.eco-categories__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 112px;
+  text-decoration: none;
+  color: #4e4e4e;
+  transition: color 0.2s ease;
+
+  &--active {
+    color: var(--eco-primary);
+  }
+
+  &:hover {
+    color: var(--eco-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--eco-primary);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+}
+
+.eco-categories__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 33px;
+  background: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  isolation: isolate;
+}
+
+.eco-categories__icon-img {
+  width: 61px;
+  height: 61px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  mix-blend-mode: normal;
+  transition:
+    filter 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.eco-categories__icon-img--svg {
+  flex-shrink: 0;
+  filter: none;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+
+.eco-categories__card:not(:hover):not(.eco-categories__card--active)
+  .eco-categories__icon-img:not(.eco-categories__icon-img--svg) {
+  mix-blend-mode: multiply;
+  filter: grayscale(1) contrast(1.1);
+  opacity: 1;
+}
+
+.eco-categories__card--active .eco-categories__icon-img:not(.eco-categories__icon-img--svg),
+.eco-categories__card:hover .eco-categories__icon-img:not(.eco-categories__icon-img--svg) {
+  mix-blend-mode: normal;
+  filter: brightness(0) saturate(100%) invert(24%) sepia(85%) saturate(2000%) hue-rotate(226deg)
+    brightness(95%) contrast(95%);
+  opacity: 1;
+}
+
+.eco-categories__card-label {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 112px;
+  color: inherit;
+}

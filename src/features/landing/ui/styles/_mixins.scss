@@ -1,0 +1,7 @@
+@mixin eco-content-rail {
+  max-width: var(--eco-content-max);
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}

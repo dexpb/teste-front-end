@@ -1,0 +1,96 @@
+.landing__main {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.landing__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.landing__section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+
+  .eco-shelf,
+  .eco-partners {
+    padding-inline: clamp(20px, 5vw, 56px);
+    padding-block: 0;
+  }
+
+  .eco-shelf {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .eco-shelf__inner {
+    max-width: var(--eco-rail-shelf-partners);
+    width: 100%;
+  }
+
+  .eco-shelf__track {
+    max-width: var(--eco-rail-shelf-partners);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eco-partners__inner {
+    max-width: var(--eco-rail-shelf-partners);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .eco-partners__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, var(--eco-partners-card-w)));
+    gap: var(--eco-partners-gap);
+    width: 100%;
+    max-width: var(--eco-rail-shelf-partners);
+    box-sizing: border-box;
+    justify-content: start;
+  }
+
+  .eco-partners__card {
+    width: 100%;
+    max-width: var(--eco-partners-card-w);
+    height: var(--eco-partners-card-h);
+    min-height: var(--eco-partners-card-h);
+    justify-self: start;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 900px) {
+    .eco-partners__grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 100%;
+    }
+
+    .eco-partners__card {
+      max-width: 100%;
+      width: 100%;
+      justify-self: stretch;
+    }
+  }
+}
+
+.landing > .eco-footer {
+  margin-top: 90px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
